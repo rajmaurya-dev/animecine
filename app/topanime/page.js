@@ -21,7 +21,7 @@ const TopAnime = () => {
     <>
       <main className="bg-black darkMode">
         <div className=" flex justify-center items-center">
-          <h1 className="font-bold text-2xl text-white">Top Anime {page}</h1>
+          <h1 className="font-bold text-2xl text-white py-3">Top Anime</h1>
         </div>
         <div className="">
           {isLoadingTopAnime ? (

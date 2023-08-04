@@ -6,7 +6,7 @@ const Trending = () => {
     <List
       queryKey={["seasons/upcoming"]}
       limitNumber={10}
-      pageTitle={"Top Characters"}
+      pageTitle={"Upcoming Anime"}
     />
   );
 };

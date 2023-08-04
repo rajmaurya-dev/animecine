@@ -11,7 +11,7 @@ import {
 
 export default function CardForFeature({ imgUrl, title, desc }) {
   return (
-    <Card className="max-w-[400px] bg-gray-700" shadow="none">
+    <Card className="w-[300px] md:w-[400px] bg-gray-700" shadow="none">
       <CardBody className="items-center">
         <CardHeader className="justify-center">
           <Image

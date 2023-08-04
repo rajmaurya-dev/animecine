@@ -10,7 +10,7 @@ import {
 
 export default function AnimeCard({ imgUrl, title, rank }) {
   return (
-    <Card className=" max-w-[300px] h-[400px]">
+    <Card className=" md:w-[300px] w-[150px] h-[250px] md:h-[450px]">
       <CardBody className="overflow-visible py-2 justify-center items-center">
         <Badge
           content={rank}
@@ -23,13 +23,16 @@ export default function AnimeCard({ imgUrl, title, rank }) {
             alt="Card background"
             className="object-cover rounded-xl"
             src={imgUrl}
-            width={200}
-            height={200}
+            isZoomed
+            isBlurred
+            // classNames={"max-w-[50px] max-h-[50px]"}
           />
         </Badge>
       </CardBody>
       <CardFooter className="pb-0 pt-2 px-4 flex-col items-center pb-5">
-        <h4 className="font-bold text-white text-base text-center">{title}</h4>
+        <h4 className="font-bold text-white text-[10px] md:text-base line-clamp-2 text-center ">
+          {title}
+        </h4>
       </CardFooter>
     </Card>
   );

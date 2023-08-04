@@ -15,12 +15,12 @@ export default function Home() {
   return (
     <main className="">
       <div className="bg-black flex justify-center items-center">
-        <div className="bg-gray-900 w-[80vw] my-10 py-10 px-5 rounded-lg shadow-xl">
+        <div className="bg-gray-900 w-[100vw] md:w-[80vw] my-10 py-10 px-5 rounded-lg shadow-xl">
           <div className=" flex flex-col justify-center items-center">
-            <h1 className="font-semibold text-white text-lg">
+            <h1 className="font-semibold text-white text-center mb-3 text-3xl">
               The next generation of anime platform
             </h1>
-            <h2 className="line-clamp-2 font-normal text-blue-300">
+            <h2 className="line-clamp-2 font-normal text-center mb-3 text-blue-300">
               Track, Share, and Discover your Favorite Anime and Manga with
               Animecine
             </h2>

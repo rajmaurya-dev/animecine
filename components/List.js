@@ -22,7 +22,7 @@ const List = ({ queryKey, limitNumber, pageTitle, showPagination = true }) => {
     <>
       <main className="bg-black darkMode">
         <div className="flex justify-center items-center">
-          <h1 className="font-bold text-2xl text-white">{pageTitle}</h1>
+          <h1 className="font-bold text-2xl text-white py-3">{pageTitle}</h1>
         </div>
         <div className="">
           {isLoadingAnime ? (

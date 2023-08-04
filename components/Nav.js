@@ -17,7 +17,7 @@ export default function Nav() {
           <p className="font-bold text-inherit">animeCine</p>
         </Link>
       </NavbarBrand>
-      <NavbarContent className="hidden sm:flex gap-4" justify="end">
+      <NavbarContent className=" sm:flex gap-4" justify="center">
         <NavbarItem>
           <Link as={NextLink} color="foreground" href="/topanime">
             Top Anime
