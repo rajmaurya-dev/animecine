@@ -62,37 +62,37 @@ export default function Home() {
           <CardHeader className="font-semibold justify-center">
             Popular Anime
           </CardHeader>
-          <CardBody className="p-2">
+          <div className="flex gap-[7px] flex-wrap justify-center items-center">
             <List
               queryKey={["top/anime"]}
               limitNumber={4}
               showPagination={false}
             />
-          </CardBody>
+          </div>
         </Card>
         <Card className="bg-black">
           <CardHeader className="font-semibold justify-center">
             Popular Manga
           </CardHeader>
-          <CardBody className="p-2">
+          <div className="flex gap-[7px] flex-wrap justify-center items-center">
             <List
               queryKey={["top/manga"]}
               limitNumber={4}
               showPagination={false}
             />
-          </CardBody>
+          </div>
         </Card>
         <Card className="bg-black">
           <CardHeader className="font-semibold justify-center">
             Upcoming Anime
           </CardHeader>
-          <CardBody className="p-2">
+          <div className="flex gap-[7px] flex-wrap justify-center items-center">
             <List
               queryKey={["seasons/upcoming"]}
               limitNumber={4}
               showPagination={false}
             />
-          </CardBody>
+          </div>
         </Card>
       </section>
     </main>
