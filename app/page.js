@@ -62,7 +62,7 @@ export default function Home() {
           <CardHeader className="font-semibold justify-center">
             Popular Anime
           </CardHeader>
-          <CardBody>
+          <CardBody className="p-2">
             <List
               queryKey={["top/anime"]}
               limitNumber={4}
@@ -74,7 +74,7 @@ export default function Home() {
           <CardHeader className="font-semibold justify-center">
             Popular Manga
           </CardHeader>
-          <CardBody>
+          <CardBody className="p-2">
             <List
               queryKey={["top/manga"]}
               limitNumber={4}
@@ -86,7 +86,7 @@ export default function Home() {
           <CardHeader className="font-semibold justify-center">
             Upcoming Anime
           </CardHeader>
-          <CardBody>
+          <CardBody className="p-2">
             <List
               queryKey={["seasons/upcoming"]}
               limitNumber={4}
