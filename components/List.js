@@ -30,7 +30,7 @@ const List = ({ queryKey, limitNumber, pageTitle, showPagination = true }) => {
               <Spinner label="Fetching top anime" color="primary" size="lg" />
             </div>
           ) : animeData ? (
-            <div className="flex gap-2 flex-wrap justify-center items-center">
+            <div className="flex gap-[7px] flex-wrap justify-center items-center">
               {animeData.data?.map((anime) => (
                 <AnimeCard
                   rank={anime.rank || anime.favorites}
