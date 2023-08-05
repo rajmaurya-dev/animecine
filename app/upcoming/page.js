@@ -7,6 +7,7 @@ const Trending = () => {
       queryKey={["seasons/upcoming"]}
       limitNumber={10}
       pageTitle={"Upcoming Anime"}
+      pathname={"upcoming"}
     />
   );
 };

@@ -6,6 +6,7 @@ import {
   Image,
   CardFooter,
   Badge,
+  Skeleton,
 } from "@nextui-org/react";
 
 export default function AnimeCard({ imgUrl, title, rank }) {
@@ -29,6 +30,7 @@ export default function AnimeCard({ imgUrl, title, rank }) {
           />
         </Badge>
       </CardBody>
+
       <CardFooter className=" pt-2 px-4 flex-col items-center pb-5">
         <h4 className="font-bold text-white text-[10px] md:text-base line-clamp-2 text-center ">
           {title}

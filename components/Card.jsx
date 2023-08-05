@@ -7,6 +7,7 @@ import {
   Divider,
   Link,
   Image,
+  Skeleton,
 } from "@nextui-org/react";
 
 export default function CardForFeature({ imgUrl, title, desc }) {
@@ -22,6 +23,7 @@ export default function CardForFeature({ imgUrl, title, desc }) {
             width={80}
           />
         </CardHeader>
+
         <div className="flex flex-col">
           <p className="text-md text-white font-bold ">{title}</p>
         </div>

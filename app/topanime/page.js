@@ -2,6 +2,7 @@
 import AnimeCard from "@/components/AnimeCard";
 import { useJikan } from "@/hooks/useJikan";
 import { Pagination, Spinner, Skeleton } from "@nextui-org/react";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const TopAnime = () => {
@@ -32,12 +33,13 @@ const TopAnime = () => {
             <div className="flex gap-2 flex-wrap justify-center items-center">
               {topAnime.data?.map((anime) => {
                 return (
-                  <AnimeCard
-                    rank={anime.rank}
-                    title={anime.title}
-                    imgUrl={anime.images?.jpg.image_url}
-                    key={anime.mal_id}
-                  />
+                  <Link key={anime.mal_id} href={`/topanime/${anime.mal_id}`}>
+                    <AnimeCard
+                      rank={anime.rank}
+                      title={anime.title}
+                      imgUrl={anime.images?.jpg.image_url}
+                    />
+                  </Link>
                 );
               })}
             </div>

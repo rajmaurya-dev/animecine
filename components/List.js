@@ -3,8 +3,15 @@ import React, { useState } from "react";
 import { Pagination, Spinner, Skeleton } from "@nextui-org/react";
 import { useJikan } from "@/hooks/useJikan";
 import AnimeCard from "./AnimeCard";
+import Link from "next/link";
 
-const List = ({ queryKey, limitNumber, pageTitle, showPagination = true }) => {
+const List = ({
+  queryKey,
+  limitNumber,
+  pageTitle,
+  showPagination = true,
+  pathname,
+}) => {
   const [page, setPage] = useState(1);
   let limit = limitNumber;
   const { data: animeData, isLoading: isLoadingAnime } = useJikan(
@@ -27,17 +34,22 @@ const List = ({ queryKey, limitNumber, pageTitle, showPagination = true }) => {
         <div className="">
           {isLoadingAnime ? (
             <div className="flex justify-center items-center w-[100vw] h-[90vh] bg-black">
-              <Spinner label="Fetching top anime" color="primary" size="lg" />
+              <Spinner
+                label="Fetching data from server"
+                color="primary"
+                size="lg"
+              />
             </div>
           ) : animeData ? (
             <div className="flex gap-2 flex-wrap justify-center items-center">
               {animeData.data?.map((anime) => (
-                <AnimeCard
-                  rank={anime.rank || anime.favorites}
-                  title={anime.title || anime.name}
-                  imgUrl={anime.images?.jpg.image_url}
-                  key={anime.mal_id}
-                />
+                <Link key={anime.mal_id} href={`/${pathname}/${anime.mal_id}`}>
+                  <AnimeCard
+                    rank={anime.rank || anime.favorites}
+                    title={anime.title || anime.name}
+                    imgUrl={anime.images?.jpg.image_url}
+                  />
+                </Link>
               ))}
             </div>
           ) : (

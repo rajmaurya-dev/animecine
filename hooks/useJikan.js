@@ -11,3 +11,25 @@ export function useJikan(queryKey, page, limit) {
     return response.data;
   });
 }
+
+export function useAnimeDetails(id) {
+  return useQuery(["animeDetails", id], async () => {
+    const response = await axios.get(`https://api.jikan.moe/v4/anime/${id}`);
+    return response.data;
+  });
+}
+export function useMangaDetails(id) {
+  return useQuery(["mangaDetails", id], async () => {
+    const response = await axios.get(`https://api.jikan.moe/v4/manga/${id}`);
+    return response.data;
+  });
+}
+
+export function useAnimeRecommendationById(id) {
+  return useQuery(["animeRecommendation", id], async () => {
+    const response = await axios.get(
+      `https://api.jikan.moe/v4/anime/${id}/recommendations`
+    );
+    return response.data;
+  });
+}
