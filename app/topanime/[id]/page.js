@@ -1,7 +1,12 @@
 "use client";
 import React from "react";
 import { useRouter } from "next/navigation";
-import { useAnimeDetails, useAnimeRecommendationById } from "@/hooks/useJikan";
+import {
+  useAnimeDetails,
+  useAnimeNews,
+  useAnimeRecommendationById,
+  useAnimeStream,
+} from "@/hooks/useJikan";
 import AnimeDetail from "@/components/Details";
 import AnimeCard from "@/components/AnimeCard";
 import { Spinner } from "@nextui-org/react";
@@ -14,6 +19,9 @@ const TopAnimeDetail = ({ params }) => {
     isError: isErrorAnimeDetails,
     error: errorAnimeDetails,
   } = useAnimeDetails(id);
+  const { data: animeStream, isLoading: isLoadingAnimeStream } =
+    useAnimeStream(id);
+  const { data: animeNews, isLoading: isLoadingAnimeNews } = useAnimeNews(id);
 
   const { data: animeRecom } = useAnimeRecommendationById(id);
   const limitedData = animeRecom?.data?.slice(0, 5);

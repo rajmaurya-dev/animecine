@@ -10,7 +10,10 @@ const AnimeDetail = ({ data }) => {
           <Image
             src={data.images.jpg.image_url}
             alt={data.title}
-            className="rounded-2xl px-10"
+            className="rounded-2xl mx-10"
+            radius="full"
+            loading="lazy"
+            shadow="lg"
             isBlurred
           />
         </div>
@@ -23,7 +26,7 @@ const AnimeDetail = ({ data }) => {
 
       {/* Genres */}
       <div className="flex flex-wrap mt-4">
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-wrap">
           {data.genres.map((genre) => (
             <Chip key={genre.mal_id} color="primary" variant="flat">
               {genre.name}
@@ -34,9 +37,9 @@ const AnimeDetail = ({ data }) => {
 
       {/* Themes */}
       <div className="flex flex-wrap mt-4">
-        <ul className="flex gap-2 ">
+        <ul className="flex gap-2 flex-wrap ">
           {data.themes.map((theme) => (
-            <Chip key={theme.mal_id} color="danger" variant="flat">
+            <Chip key={theme.mal_id} color="warning" variant="faded">
               {theme.name}
             </Chip>
           ))}

@@ -22,7 +22,7 @@ const TopManga = () => {
       <List
         queryKey={["top/manga"]}
         limitNumber={10}
-        pageTitle={"Upcoming Anime"}
+        pageTitle={"Top Manga"}
         pathname={"topmanga"}
       />
     </>

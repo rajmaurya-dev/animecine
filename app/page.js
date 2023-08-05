@@ -67,6 +67,7 @@ export default function Home() {
               queryKey={["top/anime"]}
               limitNumber={4}
               showPagination={false}
+              pathname={"topanime"}
             />
           </div>
         </Card>
@@ -79,6 +80,7 @@ export default function Home() {
               queryKey={["top/manga"]}
               limitNumber={4}
               showPagination={false}
+              pathname={"topmanga"}
             />
           </div>
         </Card>
@@ -91,6 +93,7 @@ export default function Home() {
               queryKey={["seasons/upcoming"]}
               limitNumber={4}
               showPagination={false}
+              pathname={"upcoming"}
             />
           </div>
         </Card>

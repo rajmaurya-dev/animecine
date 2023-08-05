@@ -18,9 +18,19 @@ export function useAnimeDetails(id) {
     return response.data;
   });
 }
-export function useMangaDetails(id) {
-  return useQuery(["mangaDetails", id], async () => {
-    const response = await axios.get(`https://api.jikan.moe/v4/manga/${id}`);
+export function useAnimeStream(id) {
+  return useQuery(["animeStream", id], async () => {
+    const response = await axios.get(
+      `https://api.jikan.moe/v4/anime/${id}/streaming`
+    );
+    return response.data;
+  });
+}
+export function useAnimeNews(id) {
+  return useQuery(["animeNews", id], async () => {
+    const response = await axios.get(
+      `https://api.jikan.moe/v4/anime/${id}/news`
+    );
     return response.data;
   });
 }
@@ -30,6 +40,12 @@ export function useAnimeRecommendationById(id) {
     const response = await axios.get(
       `https://api.jikan.moe/v4/anime/${id}/recommendations`
     );
+    return response.data;
+  });
+}
+export function useMangaDetails(id) {
+  return useQuery(["mangaDetails", id], async () => {
+    const response = await axios.get(`https://api.jikan.moe/v4/manga/${id}`);
     return response.data;
   });
 }
