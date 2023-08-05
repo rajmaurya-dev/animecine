@@ -19,17 +19,17 @@ export default function Nav() {
       </NavbarBrand>
       <NavbarContent className=" sm:flex gap-4" justify="center">
         <NavbarItem>
-          <Link as={NextLink} color="foreground" href="/topanime">
+          <Link as={NextLink} color="foreground" href="/anime">
             Anime
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="/upcoming" as={NextLink} color="foreground">
-            Upcoming
+          <Link href="/ongoing" as={NextLink} color="foreground">
+            ongoing
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" as={NextLink} href="/topmanga">
+          <Link color="foreground" as={NextLink} href="/manga">
             Manga
           </Link>
         </NavbarItem>

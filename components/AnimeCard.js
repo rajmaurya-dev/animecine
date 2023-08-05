@@ -11,7 +11,7 @@ import {
 
 export default function AnimeCard({ imgUrl, title, rank }) {
   return (
-    <Card className=" md:w-[300px]  w-[145px] h-[250px] md:h-[450px]">
+    <Card className=" md:w-[200px]  w-[145px] h-[250px] md:h-[350px]">
       <CardBody className="overflow-visible py-2 justify-center items-center">
         <Badge
           content={rank}
@@ -26,6 +26,7 @@ export default function AnimeCard({ imgUrl, title, rank }) {
             src={imgUrl}
             isZoomed
             isBlurred
+            loading="lazy"
             // classNames={"max-w-[50px] max-h-[50px]"}
           />
         </Badge>

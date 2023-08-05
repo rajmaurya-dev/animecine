@@ -23,7 +23,7 @@ const TopManga = () => {
         queryKey={["top/manga"]}
         limitNumber={10}
         pageTitle={"Top Manga"}
-        pathname={"topmanga"}
+        pathname={"manga"}
       />
     </>
   );

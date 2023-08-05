@@ -1,33 +1,34 @@
 "use client";
+import AnimeCard from "@/components/AnimeCard";
+import List from "@/components/List";
 import { useJikan } from "@/hooks/useJikan";
-import { Skeleton, Spinner } from "@nextui-org/react";
-export default function AnimeList() {
-  const { data: topAnime, isLoading: isLoadingTopAnime } = useJikan([
-    "top/anime",
-  ]);
-  const { data: seasonalAnime, isLoading: isLoadingSeasonalAnime } = useJikan([
-    "seasons/upcoming",
-  ]);
+import { Pagination, Spinner, Skeleton } from "@nextui-org/react";
+import Link from "next/link";
+import React, { useState } from "react";
 
-  if (isLoadingTopAnime || isLoadingSeasonalAnime) {
-    return <Spinner label="Loading..." color="primary" size="lg" />;
-  }
-
-  return (
-    <div>
-      <h1>Top Anime</h1>
-      <ul>
-        {topAnime.data.map((anime) => (
-          <li key={anime.mal_id}>{anime.title}</li>
-        ))}
-      </ul>
-
-      <h1>Seasonal Anime</h1>
-      <ul>
-        {seasonalAnime.data.map((anime) => (
-          <li key={anime.mal_id}>{anime.title}</li>
-        ))}
-      </ul>
-    </div>
+const TopAnime = () => {
+  const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(10);
+  const { data: topAnime, isLoading: isLoadingTopAnime } = useJikan(
+    ["top/anime"],
+    page,
+    limit
   );
-}
+  const [isLoaded, setIsLoaded] = useState(isLoadingTopAnime);
+  const handleChange = (value) => {
+    setPage(value);
+  };
+  console.log(page);
+  return (
+    <>
+      <List
+        queryKey={["top/anime"]}
+        limitNumber={10}
+        pageTitle={"Top Anime"}
+        pathname={"anime"}
+      />
+    </>
+  );
+};
+
+export default TopAnime;

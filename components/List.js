@@ -41,7 +41,7 @@ const List = ({
               />
             </div>
           ) : animeData ? (
-            <div className="flex gap-2 flex-wrap justify-center items-center">
+            <div className="flex gap-7 flex-wrap justify-center items-center">
               {animeData.data?.map((anime) => (
                 <Link key={anime.mal_id} href={`/${pathname}/${anime.mal_id}`}>
                   <AnimeCard

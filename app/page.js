@@ -67,7 +67,7 @@ export default function Home() {
               queryKey={["top/anime"]}
               limitNumber={4}
               showPagination={false}
-              pathname={"topanime"}
+              pathname={"anime"}
             />
           </div>
         </Card>
@@ -80,7 +80,7 @@ export default function Home() {
               queryKey={["top/manga"]}
               limitNumber={4}
               showPagination={false}
-              pathname={"topmanga"}
+              pathname={"manga"}
             />
           </div>
         </Card>
