@@ -11,7 +11,14 @@ export function useJikan(queryKey, page, limit) {
     return response.data;
   });
 }
-
+export function useJikanSearch(query) {
+  return useQuery(["jikanSearch", query], async () => {
+    const response = await axios.get(
+      `https://api.jikan.moe/v4/anime?q=${query}`
+    );
+    return response.data;
+  });
+}
 export function useAnimeDetails(id) {
   return useQuery(["animeDetails", id], async () => {
     const response = await axios.get(`https://api.jikan.moe/v4/anime/${id}`);

@@ -11,11 +11,12 @@ import {
   Link,
   Image,
 } from "@nextui-org/react";
+import NextLink from "next/link";
 export default function Home() {
   return (
     <main className="">
       <div className="bg-black flex justify-center items-center">
-        <div className="bg-gray-900 w-[100vw] md:w-[80vw] my-10 py-10 px-5 rounded-lg shadow-xl">
+        <div className="bg-black w-[100vw] md:w-[80vw] my-10 py-10 px-5 rounded-lg shadow-xl">
           <div className=" flex flex-col justify-center items-center">
             <h1 className="font-semibold text-white text-center mb-3 text-3xl">
               The next generation of anime platform
@@ -57,6 +58,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+
       <section className="px-5 py-2 bg-black flex flex-col gap-2">
         <Card className="bg-black">
           <CardHeader className="font-semibold justify-center">
@@ -86,14 +88,14 @@ export default function Home() {
         </Card>
         <Card className="bg-black">
           <CardHeader className="font-semibold justify-center">
-            Upcoming Anime
+            Ongoing Anime
           </CardHeader>
           <div className="flex gap-[7px] flex-wrap justify-center items-center">
             <List
-              queryKey={["seasons/upcoming"]}
+              queryKey={["seasons/now"]}
               limitNumber={4}
               showPagination={false}
-              pathname={"upcoming"}
+              pathname={"ongoing"}
             />
           </div>
         </Card>
