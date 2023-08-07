@@ -33,6 +33,36 @@ export function useAnimeStream(id) {
     return response.data;
   });
 }
+
+export function useAnimeGenres() {
+  return useQuery(
+    ["animeGenres"], // add a comma here
+    async () => {
+      const response = await axios.get("https://api.jikan.moe/v4/genres/anime");
+      return response.data;
+    }
+  );
+}
+
+export function useAnimeGenreId(mal_id, page) {
+  return useQuery(["animeGenreData", mal_id, page], async () => {
+    const response = await axios.get(
+      `https://api.jikan.moe/v4/anime?genres=${mal_id}&page=${page}`
+    );
+    return response.data;
+  });
+}
+// export function useAnimeGenreId(mal_id) {
+//   return useQuery(["animeGenreData", mal_id], async () => {
+//     if (mal_id) {
+//       const response = await axios.get(
+//         `https://api.jikan.moe/v4/anime?genres=${mal_id}`
+//       );
+//       return response.data;
+//     }
+//     return null;
+//   });
+// }
 export function useAnimeNews(id) {
   return useQuery(["animeNews", id], async () => {
     const response = await axios.get(

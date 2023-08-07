@@ -11,8 +11,10 @@ import {
   Link,
   Image,
 } from "@nextui-org/react";
+import { useRouter } from "next/navigation";
 import NextLink from "next/link";
 export default function Home() {
+  const router = useRouter();
   return (
     <main className="">
       <div className="bg-black flex justify-center items-center">
@@ -73,7 +75,7 @@ export default function Home() {
             />
           </div>
         </Card>
-        <Card className="bg-black">
+        <Card className="bg-black" onPress={() => router.replace("/manga")}>
           <CardHeader className="font-semibold justify-center">
             Popular Manga
           </CardHeader>
@@ -86,6 +88,7 @@ export default function Home() {
             />
           </div>
         </Card>
+
         <Card className="bg-black">
           <CardHeader className="font-semibold justify-center">
             Ongoing Anime
