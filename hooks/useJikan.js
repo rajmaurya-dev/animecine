@@ -47,7 +47,7 @@ export function useAnimeGenres() {
 export function useAnimeGenreId(mal_id, page) {
   return useQuery(["animeGenreData", mal_id, page], async () => {
     const response = await axios.get(
-      `https://api.jikan.moe/v4/anime?genres=${mal_id}&page=${page}`
+      `https://api.jikan.moe/v4/anime?genres=${mal_id}&page=${page}&order_by=popularity`
     );
     return response.data;
   });

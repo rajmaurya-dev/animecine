@@ -10,9 +10,13 @@ import {
   Spinner,
 } from "@nextui-org/react";
 import Link from "next/link";
-import React, { useState } from "react";
+import { useSearchParams } from "next/navigation";
+import React, { useEffect, useState } from "react";
 
 const AnimeGenres = () => {
+  const searchParams = useSearchParams();
+
+  const genre_id = searchParams.get("genre_id");
   const { data: genresData } = useAnimeGenres();
   const [showAll, setShowAll] = useState(false);
   const [selectedMalId, setSelectedMalId] = useState(1);
@@ -38,6 +42,11 @@ const AnimeGenres = () => {
   const handleChange = (value) => {
     setPage(value);
   };
+  useEffect(() => {
+    if (genre_id) {
+      setSelectedMalId(genre_id);
+    }
+  }, [genre_id]);
   return (
     <>
       <h1 className="text-xl font-bold mb-4 text-center">

@@ -58,17 +58,15 @@ const List = ({
         </div>
         <div className="flex justify-center py-5">
           {animeData && showPagination && (
-            <Skeleton isLoaded={isLoaded}>
-              <Pagination
-                total={animeData.pagination?.last_visible_page}
-                initialPage={page}
-                onChange={handleChange}
-                color="primary"
-                className="gap-2 bg-black"
-                radius="full"
-                showControl
-              />
-            </Skeleton>
+            <Pagination
+              total={animeData.pagination?.last_visible_page}
+              initialPage={page}
+              onChange={handleChange}
+              color="primary"
+              className="gap-2 bg-black"
+              radius="full"
+              showControl
+            />
           )}
         </div>
       </main>

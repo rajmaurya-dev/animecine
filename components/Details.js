@@ -1,4 +1,5 @@
 import { Chip, Image } from "@nextui-org/react";
+import Link from "next/link";
 import React from "react";
 
 const AnimeDetail = ({ data }) => {
@@ -28,9 +29,11 @@ const AnimeDetail = ({ data }) => {
       <div className="flex flex-wrap mt-4">
         <div className="flex gap-2 flex-wrap">
           {data.genres.map((genre) => (
-            <Chip key={genre.mal_id} color="primary" variant="flat">
-              {genre.name}
-            </Chip>
+            <Link key={genre.mal_id} href={`/genres?genre_id=${genre.mal_id}`}>
+              <Chip color="primary" variant="flat">
+                {genre.name}
+              </Chip>
+            </Link>
           ))}
         </div>
       </div>
@@ -39,7 +42,11 @@ const AnimeDetail = ({ data }) => {
       <div className="flex flex-wrap mt-4">
         <ul className="flex gap-2 flex-wrap ">
           {data.themes.map((theme) => (
-            <Chip key={theme.mal_id} color="warning" variant="faded">
+            <Chip
+              key={theme.mal_id}
+              className="bg-[#d2722e80] text-yellow-400"
+              variant="flat"
+            >
               {theme.name}
             </Chip>
           ))}
