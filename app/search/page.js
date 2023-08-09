@@ -3,17 +3,23 @@ import AnimeCard from "@/components/AnimeCard";
 import { useJikanSearch } from "@/hooks/useJikan";
 import { Input, Spinner } from "@nextui-org/react";
 import Link from "next/link";
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 const page = () => {
   const [search, setSearch] = useState("one piece");
-  const queryKey = useMemo(() => [search], [search]);
-  const {
-    data: animeData,
-    isLoading,
-    isError,
-    error,
-  } = useJikanSearch(queryKey, {});
+  const [debouncedSearch, setDebouncedSearch] = useState("one piece");
+  const queryKey = useMemo(() => [debouncedSearch], [debouncedSearch]);
+
+  useEffect(() => {
+    const debounceTimeout = setTimeout(() => {
+      setDebouncedSearch(search);
+    }, 3000);
+
+    return () => clearTimeout(debounceTimeout);
+  }, [search]);
+
+  const { data: animeData, isLoading } = useJikanSearch(queryKey, {});
+
   return (
     <div className="flex flex-col items-center mt-10">
       <div className="text-3xl font-bold mb-5">Anime Search</div>

@@ -1,4 +1,4 @@
-// src/hooks/useJikan.js
+// hooks/useJikan.js
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
@@ -52,17 +52,7 @@ export function useAnimeGenreId(mal_id, page) {
     return response.data;
   });
 }
-// export function useAnimeGenreId(mal_id) {
-//   return useQuery(["animeGenreData", mal_id], async () => {
-//     if (mal_id) {
-//       const response = await axios.get(
-//         `https://api.jikan.moe/v4/anime?genres=${mal_id}`
-//       );
-//       return response.data;
-//     }
-//     return null;
-//   });
-// }
+
 export function useAnimeNews(id) {
   return useQuery(["animeNews", id], async () => {
     const response = await axios.get(
