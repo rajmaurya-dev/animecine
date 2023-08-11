@@ -27,7 +27,7 @@ const List = ({
 
   return (
     <>
-      <main className="bg-black darkMode">
+      <main className="bg-black darkMode min-h-screen">
         <div className="flex justify-center items-center">
           <h1 className="font-bold text-2xl text-white py-3">{pageTitle}</h1>
         </div>
@@ -41,7 +41,7 @@ const List = ({
               />
             </div>
           ) : animeData ? (
-            <div className="flex gap-7 flex-wrap justify-center items-center">
+            <div className="flex gap-7 flex-wrap justify-center items-center ">
               {animeData.data?.map((anime) => (
                 <Link key={anime.mal_id} href={`/${pathname}/${anime.mal_id}`}>
                   <AnimeCard

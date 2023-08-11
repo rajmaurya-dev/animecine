@@ -21,7 +21,7 @@ const page = () => {
   const { data: animeData, isLoading } = useJikanSearch(queryKey, {});
 
   return (
-    <div className="flex flex-col items-center mt-10">
+    <div className="flex flex-col items-center mt-10 min-h-screen">
       <div className="text-3xl font-bold mb-5">Anime Search</div>
       <div className="my-4">
         <form
@@ -47,9 +47,9 @@ const page = () => {
               size="lg"
             />
           </div>
-        ) : animeData ? (
+        ) : animeData && animeData.data.length > 0 ? (
           <div className="flex gap-7 flex-wrap justify-center items-center">
-            {animeData.data?.map((anime) => (
+            {animeData.data.map((anime) => (
               <Link key={anime.mal_id} href={`/anime/${anime.mal_id}`}>
                 <AnimeCard
                   rank={anime.rank || anime.favorites}
@@ -60,7 +60,7 @@ const page = () => {
             ))}
           </div>
         ) : (
-          <div>No Data Found</div>
+          <div className="h-screen">No Data Found</div>
         )}
       </div>
     </div>

@@ -52,7 +52,7 @@ const AnimeGenres = () => {
       <h1 className="text-xl font-bold mb-4 text-center">
         Explore anime by Genres
       </h1>
-      <div className="flex flex-col md:flex-row relative ">
+      <div className="flex flex-col md:flex-row relative  ">
         {/* Sidebar */}
         <aside className="md:w-1/4 w-full md:overflow-y-scroll md:h-[100vh] md:sticky md:top-0 flex md:flex-row flex-col bg-black text-white">
           <div className="flex justify-center flex-wrap gap-1 items-center ">
